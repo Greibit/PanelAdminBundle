@@ -1,0 +1,25 @@
+{
+    "name":         "greibit/panel-admin-bundle",
+    "description":  "GreibitPanelAdminBundle provide base templates for admin panels in Symfony",
+    "keywords":     ["admin","panel","bootstrap"],
+    "type":         "symfony-bundle",
+    "license":      "MIT",
+    "authors":     [
+        {
+            "name":     "José Carlos Liébana",
+            "email":    "jocalc@gmail.com"
+        }
+    ],
+    "require":      {
+        "php":                      ">=5.3.3",
+        "symfony/framework-bundle": "~2.3",
+        "symfony/twig-bundle":      "~2.3",
+        "symfony/form":             "~2.3",
+        "symfony/console":          "~2.3",
+        "symfony/finder":           "~2.3"
+    },
+    "autoload": {
+        "psr-0": { "Greibit\\Bundle\\PanelAdminBundle": "" }
+    },
+    "target-dir": "Greibit/Bundle/PanelAdminBundle"
+}
