@@ -1,6 +1,6 @@
 <?php
 
-namespace Greibit\PanelAdminBundle\DependencyInjection;
+namespace Greibit\Bundle\PanelAdminBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

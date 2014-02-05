@@ -1,6 +1,6 @@
 <?php
 
-namespace Greibit\PanelAdminBundle;
+namespace Greibit\Bundle\PanelAdminBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

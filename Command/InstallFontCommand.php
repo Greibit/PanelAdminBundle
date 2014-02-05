@@ -1,6 +1,6 @@
 <?php
 
-namespace Greibit\PanelAdminBundle\Command;
+namespace Greibit\Bundle\PanelAdminBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
