@@ -17,7 +17,7 @@
         "symfony/form":             "~2.3",
         "symfony/console":          "~2.3",
         "symfony/finder":           "~2.3",
-        "knplabs/knp-menu-bundle":  "dev-master"
+        "knplabs/knp-menu-bundle":  "2.0.*@dev"
     },
     "autoload": {
         "psr-0": { "Greibit\\Bundle\\PanelAdminBundle": "" }
