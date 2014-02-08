@@ -20,9 +20,11 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('greibit_panel_admin');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+            ->children()
+                ->scalarNode('menu_builder')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('panel_title')->defaultValue("Greibit Administration")->end()
+            ->end();
 
         return $treeBuilder;
     }

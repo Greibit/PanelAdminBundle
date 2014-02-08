@@ -2,6 +2,16 @@ parameters:
 #    greibit_panel_admin.example.class: Greibit\PanelAdminBundle\Example
 
 services:
-#    greibit_panel_admin.example:
-#        class: %greibit_panel_admin.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    greibit_panel_admin.menu_renderer:
+        class: Greibit\Bundle\PanelAdminBundle\Menu\CustomRenderer
+        arguments:
+            - @knp_menu.matcher
+            - %knp_menu.renderer.list.options%
+            - %kernel.charset%
+        tags:
+            - { name: knp_menu.renderer, alias: custom }
+    greibit.twig.menu_expose_extension:
+        class: Greibit\Bundle\PanelAdminBundle\Twig\MenuExposeExtension
+        arguments: [@service_container]
+        tags:
+            - { name: twig.extension }

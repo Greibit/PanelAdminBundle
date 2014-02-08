@@ -24,5 +24,8 @@ class GreibitPanelAdminExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+        $container->setParameter('greibit_panel_admin.menu_builder', $config['menu_builder']);
+        $container->setParameter('greibit_panel_admin.panel_title', $config['panel_title']);
     }
 }
