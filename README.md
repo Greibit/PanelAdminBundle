@@ -37,7 +37,6 @@ class AppKernel extends Kernel
 }
 ```
 
-
 Configuration
 -------------
 Add configuration to your config.yml:
@@ -46,8 +45,22 @@ greibit_panel_admin:
     menu_builder: "AcmeDemoBundle:Builder:sidebarMenu"
     panel_title: "Greibit Administration"
 ```
+
+Use it!
+-------------
+To use the Admin Panel proposed by Greibit just extends your twig templates with the GreibitPanelAdmin `layout` and use the `page` block
+
+``` twig
+
+{% extends 'GreibitPanelAdminBundle::layout.html.twig' %}
+{% block page %} {% endblock %}
+
+```
+
 Dependencies
 ------------
 * KnpMenuBundle
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Greibit/paneladminbundle/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 
