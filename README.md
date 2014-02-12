@@ -64,3 +64,7 @@ Dependencies
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Greibit/paneladminbundle/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Greibit/paneladminbundle/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
