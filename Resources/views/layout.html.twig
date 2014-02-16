@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <title>{% block title %}Administration!{% endblock %}</title>
 
-    <link href="{{ asset("bundles/greibitpaneladmin/css/bootstrap.css") }}" rel="stylesheet">
-    <link href="{{ asset("bundles/greibitpaneladmin/css/sb-admin.css") }}" rel="stylesheet">
-    <link href="{{ asset("bundles/greibitpaneladmin/css/font-awesome.css") }}" rel="stylesheet">
+    {% block bootstrap_css %}
+        <link href="{{ asset("bundles/greibitpaneladmin/css/bootstrap.css") }}" rel="stylesheet">
+        <link href="{{ asset("bundles/greibitpaneladmin/css/font-awesome.css") }}" rel="stylesheet">
+    {% endblock %}
+
+    {% block template_css %}
+        <link href="{{ asset("bundles/greibitpaneladmin/css/sb-admin.css") }}" rel="stylesheet">
+    {% endblock %}
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
@@ -257,9 +262,14 @@
 
 </div>
 
+{% block vendor_js %}
 <script type="text/javascript" src="{{ asset("bundles/greibitpaneladmin/js/jquery.js") }}"></script>
 <script type="text/javascript" src="{{ asset("bundles/greibitpaneladmin/js/bootstrap.js") }}"></script>
+{% endblock %}
+
+{% block template_js %}
 <script type="text/javascript" src="{{ asset("bundles/greibitpaneladmin/js/sb-admin.js") }}"></script>
 <script type="text/javascript" src="{{ asset("bundles/greibitpaneladmin/js/plugins/metisMenu/jquery.metisMenu.js") }}"></script>
+{% endblock %}
 </body>
 </html>
