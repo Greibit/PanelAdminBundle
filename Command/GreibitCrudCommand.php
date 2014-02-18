@@ -50,8 +50,8 @@ class GreibitCrudCommand extends GenerateDoctrineCrudCommand
             $skeletonDirs[] = $dir;
         }
 
-        $skeletonDirs[] = $this->getContainer()->get('kernel')->locateResource('@GreibitCrudGeneratorBundle/Resources/skeleton');
-        $skeletonDirs[] = $this->getContainer()->get('kernel')->locateResource('@GreibitCrudGeneratorBundle/Resources');
+        $skeletonDirs[] = $this->getContainer()->get('kernel')->locateResource('@GreibitPanelAdminBundle/Resources/skeleton');
+        $skeletonDirs[] = $this->getContainer()->get('kernel')->locateResource('@GreibitPanelAdminBundle/Resources');
 
         return $skeletonDirs;
     }
@@ -59,7 +59,7 @@ class GreibitCrudCommand extends GenerateDoctrineCrudCommand
     protected function interact(InputInterface $input, OutputInterface $output)
     {
         $dialog = $this->getDialogHelper();
-        $dialog->writeSection($output, 'GreibitCrudGeneratorBundle');
+        $dialog->writeSection($output, 'GreibitPanelAdminBundle');
 
         parent::interact($input, $output);
     }
