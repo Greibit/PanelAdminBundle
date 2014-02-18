@@ -1,0 +1,8 @@
+
+{%- for action in record_actions %}
+
+        <a class="btn btn-default btn-circle" href="{{ "{{ path('"~ route_name_prefix ~"_"~ action ~"', { 'id': entity.id }) }}" }}">
+            <span class="glyphicon glyphicon-{{ action_icons[action] }}"></span>
+        </a>
+
+{%- endfor %}

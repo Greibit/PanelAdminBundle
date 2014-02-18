@@ -1,0 +1,55 @@
+form.filter-form .form-control{
+    height: 24px;
+    padding: 2px 4px;
+    font-size: 0.9em;
+}
+.float-left{
+    float:left;
+    margin-right:10px;
+}
+.float-right{
+    float:right;
+}
+
+.page-header .btn{
+    position:relative;
+    bottom: 4px;
+}
+
+.crud-table thead th{
+    vertical-align: top !important;
+    font-size: 0.9em;
+}
+
+.crud-table tbody td{
+    vertical-align: middle !important;
+    padding:2px 6px !important;
+}
+
+.crud-table tbody td.id-td{
+    width:80px;
+}
+
+.crud-table tbody td.id-td,
+.crud-table tbody td.integer-td,
+.crud-table tbody td.number-td,
+.crud-table tbody td.decimal-td{
+    text-align:right;
+}
+
+.crud-table tbody td.actions-td{
+    width:78px;
+}
+
+.crud-table tbody td.date-td{
+    width:200px;
+}
+
+.crud-table tbody td.integer-td{
+    width:100px;
+}
+
+.filter-button{
+    width:100% !important;
+    margin-top: 5px;
+}
