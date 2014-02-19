@@ -10,8 +10,8 @@
         <h1 class="page-header">
             {{ "{{ 'views.edit.edit'|trans({'%entity%': '" }}{{ entity }}{{ "'}, 'GreibitPanelAdminBundle') }}" }}
             <span class="float-right">
-            {% set hide_edit, hide_delete = true, false %}
-            {% include 'crud/views/others/record_actions.html.twig.twig' %}
+{% set hide_edit, hide_delete = true, false %}
+                {% include 'crud/views/others/record_actions.html.twig.twig' %}
             </span>
         </h1>
 
