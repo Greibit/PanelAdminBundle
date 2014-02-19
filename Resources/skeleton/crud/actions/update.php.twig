@@ -19,7 +19,7 @@
         }
 
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createForm(new {{ entity_class }}Type(), $entity);
+        $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
