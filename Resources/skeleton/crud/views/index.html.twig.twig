@@ -7,76 +7,54 @@
 {{ "{% block page %}" }}
 
     <div class="row">
-
         <div class="col-md-12">
             <h1 class="page-header">
                 {{ "{{ 'views.index.list'|trans({'%entity%': '" }}{{ entity }}{{ "'}, 'GreibitPanelAdminBundle') }}" }}
-
-                {% if 'new' in actions %}
-                    <a class="btn btn-primary btn-circle btn-lg float-right" href="{{ "{{ path('"~ route_name_prefix ~"_new') }}" }}">
-                        <span class="glyphicon glyphicon-star"></span>
-                    </a>
-                {% endif %}
+{% if 'new' in actions %}
+                <a class="btn btn-primary btn-circle btn-lg float-right" href="{{ "{{ path('"~ route_name_prefix ~"_new') }}" }}">
+                    <span class="glyphicon glyphicon-star"></span>
+                </a>
+{% endif %}
             </h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 well">
-            <form class="filter-form" action="{{ "{{ path('"~ route_name_prefix ~"') }}" }}"
-                  method="get" {{ "{{ form_enctype(filterForm) }}" }}>
-                <p>
-
-                </p>
+            <form class="filter-form" action="{{ "{{ path('"~ route_name_prefix ~"') }}" }}" method="get" {{ "{{ form_enctype(filterForm) }}" }}>
                 <table class="crud-table table table-striped table-bordered table-condensed">
                     <thead>
-                    <tr>
-                        {%- for field, metadata in fields %}
-
+                        <tr>
+{% for field, metadata in fields %}
+                            <th>{{ "{{ form_row(filterForm." ~ field ~ ") }}" }}</th>
+{% endfor %}
                             <th>
-                                {{ "{{ form_row(filterForm." ~ field ~ ") }}" }}
+                                <button type="submit" name="filter_action"  value="filter"
+                                        class="btn btn-primary btn-xs filter-button"><i class="fa fa-filter"></i> {{ "{{ 'views.index.filter'|trans({}, 'GreibitPanelAdminBundle') }}" }}</button>
+                                <button type="submit" name="filter_action" value="reset"
+                                        class="btn btn-default btn-xs filter-button"><i class="fa fa-eraser"></i> {{ "{{ 'views.index.reset'|trans({}, 'GreibitPanelAdminBundle') }}" }}</button>
                             </th>
-
-                        {%- endfor %}
-
-                        <th>
-                            <button type="submit" name="filter_action"  value="filter"
-                                    class="btn btn-primary btn-xs filter-button"><i class="fa fa-filter"></i> {{ "{{ 'views.index.filter'|trans({}, 'GreibitPanelAdminBundle') }}" }}</button>
-                            <button type="submit" name="filter_action" value="reset"
-                                    class="btn btn-default btn-xs filter-button"><i class="fa fa-eraser"></i> {{ "{{ 'views.index.reset'|trans({}, 'GreibitPanelAdminBundle') }}" }}</button>
-                        </th>
-                    </tr>
+                        </tr>
                     </thead>
                     <tbody>
                     {{ '{% for entity in entities %}' }}
-                    <tr>
-
-                        {%- for field, metadata in fields %}
-                            {%- if loop.first and ('show' in actions) %}
-
-                                <td class="id-td">
-                                    <a href="{{ "{{ path('"~ route_name_prefix ~"_show', { 'id': entity.id }) }}" }}">{{ '{{ entity.'~ field|replace({'_': ''}) ~' }}' }}</a>
-                                </td>
-
-                            {%- elseif metadata.type in ['date', 'datetime'] %}
-
-                                <td class="date-td">{{ '{% if entity.'~ field|replace({'_': ''}) ~' %}{{ entity.'~ field|replace({'_': ''}) ~'|date(\'Y-m-d H:i:s\') }}{% endif %}' }}</td>
-
-                            {%- else %}
-
-                                <td class="{{ metadata.type }}-td">{{ '{{ entity.'~ field|replace({'_': ''}) ~' }}' }}</td>
-
-                            {%- endif %}
-
-                            {%- if loop.last %}
-
-                                <td class="actions-td">
-                                    {%- include "crud/views/others/actions.html.twig.twig" %}
-                                </td>
-
-                            {%- endif %}
-                        {%- endfor %}
-
-                    </tr>
+                        <tr>
+{% for field, metadata in fields %}
+{% if loop.first and ('show' in actions) %}
+                            <td class="id-td">
+                                <a href="{{ "{{ path('"~ route_name_prefix ~"_show', { 'id': entity.id }) }}" }}">{{ '{{ entity.'~ field|replace({'_': ''}) ~' }}' }}</a>
+                            </td>
+{% elseif metadata.type in ['date', 'datetime'] %}
+                            <td class="date-td">{{ '{% if entity.'~ field|replace({'_': ''}) ~' %}{{ entity.'~ field|replace({'_': ''}) ~'|date(\'Y-m-d H:i:s\') }}{% endif %}' }}</td>
+{% else %}
+                            <td class="{{ metadata.type }}-td">{{ '{{ entity.'~ field|replace({'_': ''}) ~' }}' }}</td>
+{% endif %}
+{% if loop.last %}
+                            <td class="actions-td">
+{% include "crud/views/others/actions.html.twig.twig" %}
+                            </td>
+{% endif %}
+{% endfor %}
+                        </tr>
                     {{ '{% endfor %}' }}
                     </tbody>
                 </table>
@@ -86,13 +64,8 @@
                 <div class="col-md-12">
                     {{ '{{ pagerHtml|raw }}' }}
                 </div>
-
             </div>
         </div>
     </div>
-
-
-
-</div>
 
 {{ "{% endblock %}" }}
