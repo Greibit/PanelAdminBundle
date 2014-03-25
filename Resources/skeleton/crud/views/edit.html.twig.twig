@@ -1,10 +1,10 @@
-{{ "{% extends 'GreibitPanelAdminBundle::layout.html.twig' %}" }}
+{{ "{% extends 'DoceCodeMainBundle::layoutadmin.html.twig' %}" }}
 
 {{ "{% block title %}" }}
 {{ "{{ parent() }} -  {{ 'views.edit.edit'|trans({'%entity%': '" }}{{ entity }}{{ "'}, 'GreibitPanelAdminBundle') }}" }}
 {{ "{% endblock %}" }}
 
-{{ "{% block page %}" }}
+{{ "{% block wrapper %}" }}
 <div class="row">
     <div class="col-md-12">
         <h1 class="page-header">
@@ -15,13 +15,8 @@
             </span>
         </h1>
 
-        <form class="well" action="{{ "{{ path('"~ route_name_prefix ~"_update', { 'id': entity.id }) }}" }}" method="post" {{ "{{ form_enctype(edit_form) }}" }}>
-            <input type="hidden" name="_method" value="PUT" />
-            {{ "{{ form_widget(edit_form) }}" }}
-            <p>
-                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-{{ action_icons['edit'] }}"></span> {{ "{{ 'views.edit.editbutton'|trans({}, 'GreibitPanelAdminBundle') }}" }}</button>
-            </p>
-        </form>
+        {{ "{{ form(edit_form) }}" }}
+
     </div>
 </div>
 {{ "{% endblock %}" }}

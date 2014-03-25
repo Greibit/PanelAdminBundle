@@ -1,10 +1,10 @@
-{{ "{% extends 'GreibitPanelAdminBundle::layout.html.twig' %}" }}
+{{ "{% extends 'DoceCodeMainBundle::layoutadmin.html.twig' %}" }}
 
 {{ "{% block title %}" }}
 {{ "{{ parent() }} - {{ 'views.index.list'|trans({'%entity%': '" }}{{ entity }}{{ "'}, 'GreibitPanelAdminBundle') }}" }}
 {{ "{% endblock %}" }}
 
-{{ "{% block page %}" }}
+{{ "{% block wrapper %}" }}
 
     <div class="row">
         <div class="col-md-12">
