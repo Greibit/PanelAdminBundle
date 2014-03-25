@@ -13,7 +13,9 @@
     "require":      {
         "php":                      ">=5.3.3",
         "symfony/twig-bundle":      "~2.3",
-        "knplabs/knp-menu-bundle":  "dev-master"
+        "knplabs/knp-menu-bundle":  "dev-master",
+        "lexik/form-filter-bundle": "~2.0",
+        "pagerfanta/pagerfanta":    "~1.0"
     },
     "autoload": {
         "psr-0": { "Greibit\\Bundle\\PanelAdminBundle": "" }
